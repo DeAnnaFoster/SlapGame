@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,59 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/game.css">
 </head>
+
 <body>
+    <div class="container-fluid">
+        <div class="row row1">
+            <div class="col-xs-12">
+                <div align="right">
+                    <span>Health:<span id="health" >--</span></span>
+                </div>
+
+                <div align="right">
+                    <span>Name:<span id="name" >--</span></span>
+                </div>
+
+                <div align="right">
+                    <span>Hits:<span id="hits" >--</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row2">
+            <div class="col-xs-12"><img id="ship" align="right" src="../images/us-destroyer-818131.jpg" alt=""></div>
+        </div>
+
+        <div class="row row3">
+            <div class="col-xs-12"><img id="effect" align="middle" src="../effects/nuke.gif" alt=""></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12"><img id="sub" align="left" src="../images/sub.jpg" alt=""></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="slap">
+                    <button onClick="slap()">Slap</button>
+                </div>
+
+                <div class="punch">
+                    <button onClick="punch()">Punch</button>
+                </div>
+
+                <div class="kick">
+                    <button onClick="kick()">Kick</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <script src="game.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,90 @@
+*{
+        outline: 5px solid green;    
+}
+
+body{
+    background: url("../images/ocean.jpg") no-repeat center center fixed;
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+    height: 100vh;
+}
+
+
+.container-fluid {
+    height:  100vh;
+}
+
+.row{
+     height: 20vh;  
+    overflow: hidden;
+}
+
+.row1{
+    height: 10vh;
+    overflow: hidden;
+}
+
+.row2{
+    height: 25vh; /*  30 */
+    overflow: hidden;
+}
+
+.row3{
+     height: 25vh;  /*height: 20vh; */
+    overflow: hidden;
+}
+
+
+
+.col-xs-12{
+    height:  100vh;
+}
+
+#sub{
+    width: 200px;
+    height: 150px;
+    /* float: "left"; */
+    /* align-content: left; */
+    opacity: .2;
+    border:2px solid black;
+}
+
+#ship{
+    width: 200px;
+    height: 150px;
+    /* float: "right"; */
+    /* align-content: right; */
+    opacity: .6;
+    border:2px solid black;
+}
+
+#effect{
+    width: 200px;
+    height: 150px;
+    /* float: "middle"; */
+    /* align-content: middle; */
+    opacity: .8;
+    border:2px solid black;
+}
+
+.slap{
+    text-align: left; 
+}
+.punch{
+    text-align: left; 
+} 
+.kick{
+    text-align: left; 
+}
+
+.health{
+    text-align: right; 
+    align-content: right;
+
+}
