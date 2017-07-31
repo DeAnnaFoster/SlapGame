@@ -31,60 +31,59 @@ html {
 }
 
 .row2{
-    height: 25vh; /*  30 */
+    height: 25vh;
     overflow: hidden;
 }
 
 .row3{
-     height: 25vh;  /*height: 20vh; */
+     height: 25vh;  
     overflow: hidden;
-}
-
-
-
-.col-xs-12{
-    height:  100vh;
 }
 
 #sub{
     width: 200px;
-    height: 150px;
-    /* float: "left"; */
-    /* align-content: left; */
+    height: 120px;
     opacity: .2;
     border:2px solid black;
 }
 
 #ship{
     width: 200px;
-    height: 150px;
-    /* float: "right"; */
-    /* align-content: right; */
-    opacity: .6;
+    height: 130px;
+    opacity: .8;
     border:2px solid black;
 }
 
 #effect{
     width: 200px;
-    height: 150px;
-    /* float: "middle"; */
-    /* align-content: middle; */
+    height: 125px;
     opacity: .8;
     border:2px solid black;
 }
 
 .slap{
     text-align: left; 
+    display: inline-block;
 }
 .punch{
     text-align: left; 
+    display: inline-block;
 } 
 .kick{
     text-align: left; 
+    display: inline-block;
 }
 
-.health{
-    text-align: right; 
-    align-content: right;
-
+.myInlineLeft{
+    text-align: left; 
+    display: inline-block;
 }
+
+.rst{
+    text-align: right;
+}
+
+button{
+    opacity: .3;
+}
+
