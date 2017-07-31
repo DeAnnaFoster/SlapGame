@@ -43,31 +43,32 @@
 
         <div class="row">
             <div class="col-xs-3">
+
                 <div>
                     <div class="myInlineLeft">
-                        <button onClick="attack('slap')">Slap</button>
+                        <button onClick="app.controllers.gameController.attack('slap')">Slap</button>
                     </div>
 
                     <div class="myInlineLeft">
-                        <button onClick="attack('punch')">Punch</button>
+                        <button onClick="app.controllers.gameController.attack('punch')">Punch</button>
                     </div>
 
                     <div class="myInlineLeft">
-                        <button onClick="attack('kick')">Kick</button>
+                        <button onClick="app.controllers.gameController.attack('kick')">Kick</button>
                     </div>
                 </div>
 
                 <div>
                     <div id="items" class="myInlineLeft">
-                        <button onClick="giveItems('shield')">Shield</button>
+                        <button onClick="app.controllers.gameController.giveItems('shield')">Shield</button>
                     </div>
 
                     <div id="items" class="myInlineLeft">
-                        <button onClick="giveItems('ADCAP')">ADCAP</button>
+                        <button onClick="app.controllers.gameController.giveItems('ADCAP')">ADCAP</button>
                     </div>
 
                     <div id="items" class="myInlineLeft">
-                        <button onClick="giveItems('nuke')">Nuke</button>
+                        <button onClick="app.controllers.gameController.giveItems('nuke')">Nuke</button>
                     </div>
                 </div>
 
@@ -75,13 +76,13 @@
 
             <div class="col-xs-9">
                 <div class="rst " align="right">
-                    <button onClick="reset()">Reset</button>
+                    <button onClick="app.controllers.gameController.reset()">Reset</button>
                 </div>
             </div>
         </div>
 
-        <!-- <script src="slapGame-service.js"></script> -->
-        <!-- <script src="slapGame-controller.js"></script> -->
+         <script src="slapGame-service.js"></script> 
+         <script src="slapGame-controller.js"></script> 
         <script src="game.js"></script>
 </body>
 
