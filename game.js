@@ -41,7 +41,7 @@ function attack(type) {
     alert('attacking: ' + damage * mods);
 
     targt.health -= damage * mods;
-    targt.hits += damage;
+    targt.hits += 1;
 
     if (targt.health < 0) {
         targt.health = 0;
