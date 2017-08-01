@@ -1,5 +1,5 @@
 *{
-        /* outline: 5px solid green;     */
+           outline: 1px solid green;       
 }
 
 body{
@@ -87,3 +87,20 @@ button{
     opacity: .3;
 }
 
+#vertBar {
+    width: 20px;
+    height: 130px;
+    background-color: green;
+    text-align: right; /* To center it horizontally (if you want) */
+    line-height: 130px; /* To center it vertically */
+    /* color: green;    */
+    /* padding: 0 1px 0 0;
+    margin: 0 1px 0 0; */
+}
+
+ #progressBar{
+    width: 20px;
+    height: 130px;
+    /* background-color: #4CAF50; */
+    text-align: right;
+} 

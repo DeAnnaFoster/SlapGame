@@ -33,30 +33,66 @@ function GameService() {
         nuke: new Item("Nuke", 25.0, "'Nuf said!")
     }
 
+    function barGraph() {
+        var bar = document.getElementById("vertBar"); 
+        var requiredHeight = (130 * targt.health.toFixed(0))/100;
+        bar.style.height = requiredHeight;
+        // console.log(targt.health.toFixed(0));
+        // console.log(bar.style.height = requiredHeight);
+       
+    }
+
     function attackTarget(type) {
+        if(targt.health < 1){
+            alert('You\'re kidding right!? They\'re already Dead!' + '\r\nMONSTER!');
+            return;
+        }
+
         var damage = targt.attacks[type];
         var mods = targt.addMods().toFixed(1);
 
         document.getElementById('sub').src = '/effects/subattack/torp.gif';
         setTimeout(function(){document.getElementById('sub').src = '/images/sub.jpg'},3000);
 
-        alert('Expected damage is: ' + damage * mods);
+        var temp = getAlertSummary(damage,mods);
+        alert(temp);
 
         targt.health -= damage * mods;
         targt.hits += 1;
 
-        //do something here for up to 150 pints then a nuke result for over 200!
+        barGraph();
+
+        if(targt.health<0 && targt.health > -100){
+            setTimeout(function(){document.getElementById('ship').src = '/effects/shipdeath/ship explode.gif'}, 5000);
+            setTimeout(function(){document.getElementById('ship').src = ''},14000);
+        }
+        if(targt.health < -100){
+            setTimeout(function(){document.getElementById('ship').src = '/effects/annihilate/nuke.gif'}, 5000);
+            setTimeout(function(){document.getElementById('ship').src = ''},8500);
+        }
+
         if (targt.health < 0) {
             targt.health = 0;
-
-            //setTimeout(function(){document.getElementById('ship').src = '/effects/shipdeath/ship explode.gif'}, 3000);
-            //setTimeout(function(){document.getElementById('ship').src = './images/destroyer.jpg'},12000);
-
-            setTimeout(function(){document.getElementById('ship').src = '/effects/annihilate/nuke.gif'}, 3000);
-            setTimeout(function(){document.getElementById('ship').src = './images/destroyer.jpg'},5500);
-
+            alert('You annihilated your enemy!');
         }
+
         runUpdate();
+    }
+
+    function getAlertSummary(damage,mods){
+        var damageSummary = 'Expected damage is: ' + damage * mods;
+        var itemSummary='Using: ';
+
+        for(var i = 0; i < targt.items.length;i++){
+            if(i == targt.items.length-1){
+                itemSummary += targt.items[i].name;    
+            }else{
+                itemSummary += targt.items[i].name + ', ';
+            }
+        }
+       
+        var entire = damageSummary + "\r\n" + itemSummary;  
+        return entire;
     }
 
     function giveTargetItems(type) {
@@ -75,6 +111,8 @@ function GameService() {
         document.getElementById("health").innerText = targt.health.toFixed(0);
         document.getElementById("hits").innerText = targt.hits;
         document.getElementById("name").innerText = targt.name;
+
+        barGraph();
     }
 
     function runReset(){
@@ -83,6 +121,8 @@ function GameService() {
         targt.items.length = 0;
         document.getElementById("health").innerText = targt.health.toFixed(0);
         document.getElementById("hits").innerText = targt.hits;
+        document.getElementById('ship').src = './images/destroyer.jpg';
+        barGraph(); 
     }
 
     //public

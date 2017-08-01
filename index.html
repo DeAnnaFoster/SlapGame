@@ -13,6 +13,7 @@
 <body>
     <div class="container-fluid">
         <div class="row row1">
+            <!-- <div class="col-xs-9"></div>-->
             <div class="col-xs-9"></div>
             <div class="col-xs-3">
                 <div>
@@ -26,11 +27,24 @@
                 <div>
                     <span>Hits:<span id="hits" >--</span></span>
                 </div>
+                
             </div>
         </div>
 
         <div class="row row2">
-            <div class="col-xs-12"><img id="ship" align="right" src="./images/destroyer.jpg" alt=""></div>
+
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-1">
+
+                  <div id="progressBar" align="right" >  
+                    <div id="vertBar" align="right"></div>
+                  </div>  
+
+            </div>
+
+
+            <div class="col-xs-3"><img id="ship" align="right" src="./images/destroyer.jpg" alt=""></div>
         </div>
 
         <div class="row row3">
@@ -81,8 +95,8 @@
             </div>
         </div>
 
-         <script src="slapGame-service.js"></script> 
-         <script src="slapGame-controller.js"></script> 
+        <script src="slapGame-service.js"></script>
+        <script src="slapGame-controller.js"></script>
         <script src="game.js"></script>
 </body>
 
