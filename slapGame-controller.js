@@ -1,6 +1,8 @@
 function GameController() {
     var gameService = new GameService();
 
+    gameService.createFixedData();
+
     update();
 
     this.reset = function () {
@@ -9,13 +11,15 @@ function GameController() {
 
     this.attack = function attack(type) {
         gameService.attack(type);
-        
+
         let health = gameService.getHealth();
-        if(health == 0.0){
+        if (health == 0.0) {
             return;
         }
 
-        setTimeout(btnDisable,100);
+        writeData();
+
+        setTimeout(btnDisable, 100);
 
         document.getElementById('sub').src = '../effects/subattack/torp.gif';
         setTimeout(function () { document.getElementById('sub').src = '../images/sub.jpg' }, 3000);
@@ -63,6 +67,8 @@ function GameController() {
         document.getElementById('name').innerText = targt.name;
 
         barGraph();
+
+        writeData();
     }
 
     function reset() {
@@ -76,15 +82,28 @@ function GameController() {
         barGraph();
     }
 
-    function btnDisable(){
+    function btnDisable() {
         document.getElementById('remote1').disabled = true;
         document.getElementById('remote2').disabled = true;
         document.getElementById('remote3').disabled = true;
     }
-    function btnEnable(){
+    
+    function btnEnable() {
         document.getElementById('remote1').disabled = false;
         document.getElementById('remote2').disabled = false;
         document.getElementById('remote3').disabled = false;
+    }
+
+    function writeData(){ 
+        let attMsg = document.getElementById('attack');
+        let stats = document.getElementById('status');
+        let fxd = document.getElementById('fixed');
+        let rprt = document.getElementById('finalReport');
+
+        attMsg.innerHTML = gameService.getAttackMsg();
+        stats.innerHTML = gameService.getStatusMsg();
+        fxd.innerHTML = gameService.getFixedData();
+        rprt.innerHTML = gameService.getAttackSummary();
     }
 }
 

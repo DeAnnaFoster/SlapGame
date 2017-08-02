@@ -1,5 +1,5 @@
 *{
-            /* outline: 1px solid black;         */
+               /* outline: 1px solid black;*/
 }
 
 body{
@@ -15,13 +15,12 @@ html {
     height: 100vh;
 }
 
-
 .container-fluid {
     height:  100vh;
 }
 
 .row{
-     height: 20vh;  
+     height: 15vh; 
     overflow: hidden;
 }
 
@@ -36,7 +35,7 @@ html {
 }
 
 .row3{
-     height: 25vh;  
+     height: 35vh;  
     overflow: hidden;
 }
 
@@ -52,6 +51,7 @@ html {
     height: 130px;
     opacity: .8;
     border:2px solid black;
+  
 }
 
 #effect{
@@ -65,10 +65,12 @@ html {
     text-align: left; 
     display: inline-block;
 }
+
 .punch{
     text-align: left; 
     display: inline-block;
 } 
+
 .kick{
     text-align: left; 
     display: inline-block;
@@ -103,6 +105,34 @@ button{
    text-align: right;
 } 
 
-.special{
+#attack{
+    text-align: middle;
+    font-size: 14px;
+    color: red;
+}
+
+#status{
+    text-align: middle;
+    font-size: 14px;
+    color: limegreen;
+}
+
+.report{
+    font-size: 14px;
+    color: lightyellow;
+     margin: 0 auto; 
+}
+
+.fixed{
+    margin: 0 auto;
+}
+
+.finalReport {
+    margin: 0 auto;
+}
+
+td, th{
     padding: 0 20px 0 20px;
+    text-align: middle;
+    font-size: 14px;
 }
