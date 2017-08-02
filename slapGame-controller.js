@@ -17,24 +17,24 @@ function GameController() {
 
         setTimeout(btnDisable,100);
 
-        document.getElementById('sub').src = './effects/subattack/torp.gif';
-        setTimeout(function () { document.getElementById('sub').src = './images/sub.jpg' }, 3000);
+        document.getElementById('sub').src = '../effects/subattack/torp.gif';
+        setTimeout(function () { document.getElementById('sub').src = '../images/sub.jpg' }, 3000);
 
         barGraph();
 
         if (health > 0) {
-            setTimeout(function () { document.getElementById('ship').src = './effects/shipattack/shipdamage.gif' }, 3000);
+            setTimeout(function () { document.getElementById('ship').src = '../effects/shipattack/shipdamage.gif' }, 3000);
             setTimeout(function () { document.getElementById('ship').src = './images/destroyer.jpg' }, 8000);
             setTimeout(btnEnable, 8000);
         }
 
         if (health <= 0 && health > -100) {
-            setTimeout(function () { document.getElementById('ship').src = './effects/shipdeath/ship explode.gif' }, 5000);
+            setTimeout(function () { document.getElementById('ship').src = '../effects/shipdeath/ship explode.gif' }, 5000);
             setTimeout(function () { document.getElementById('ship').src = '' }, 14000);
             setTimeout(btnEnable, 14000);
         }
         if (health < -100) {
-            setTimeout(function () { document.getElementById('ship').src = './effects/annihilate/nuke.gif' }, 5000);
+            setTimeout(function () { document.getElementById('ship').src = '../effects/annihilate/nuke.gif' }, 5000);
             setTimeout(function () { document.getElementById('ship').src = '' }, 8500);
             setTimeout(btnEnable, 8000);
         }
