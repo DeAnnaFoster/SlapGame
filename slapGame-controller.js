@@ -1,8 +1,7 @@
 function GameController() {
     var gameService = new GameService();
-
+    gameService.reset();
     gameService.createFixedData();
-
     update();
 
     this.reset = function () {
@@ -13,11 +12,12 @@ function GameController() {
         gameService.attack(type);
 
         let health = gameService.getHealth();
+
+        writeData();
+
         if (health == 0.0) {
             return;
         }
-
-        writeData();
 
         setTimeout(btnDisable, 100);
 
@@ -33,7 +33,7 @@ function GameController() {
         }
 
         if (health <= 0 && health > -100) {
-            setTimeout(function () { document.getElementById('ship').src = '../effects/shipdeath/ship explode.gif' }, 5000);
+            setTimeout(function () { document.getElementById('ship').src = '../effects/shipdeath/shipexplode.gif' }, 5000);
             setTimeout(function () { document.getElementById('ship').src = '' }, 14000);
             setTimeout(btnEnable, 14000);
         }
@@ -44,7 +44,6 @@ function GameController() {
         }
 
         gameService.healthCheck();
-
         update();
     }
 
@@ -54,7 +53,7 @@ function GameController() {
 
     function barGraph() {
         var targt = gameService.getTarget();
-        var bar = document.getElementById("vertBar");
+        var bar = document.getElementById('vertBar');
         var requiredHeight = (130 * targt.health.toFixed(0)) / 100
         bar.style.height = requiredHeight + 'px'
     }
@@ -67,7 +66,6 @@ function GameController() {
         document.getElementById('name').innerText = targt.name;
 
         barGraph();
-
         writeData();
     }
 
@@ -80,6 +78,7 @@ function GameController() {
         document.getElementById('ship').src = './images/destroyer.jpg';
 
         barGraph();
+        update();
     }
 
     function btnDisable() {
@@ -87,7 +86,7 @@ function GameController() {
         document.getElementById('remote2').disabled = true;
         document.getElementById('remote3').disabled = true;
     }
-    
+
     function btnEnable() {
         document.getElementById('remote1').disabled = false;
         document.getElementById('remote2').disabled = false;

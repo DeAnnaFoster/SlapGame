@@ -29,12 +29,12 @@ function GameService() {
     }
 
     var items = {
-        shield: new Item("Shield", 0.3, "Awesome shield!"),
-        ADCAP: new Item("ADCAP", 1.5, "Better torpedo!"),
-        nuke: new Item("Nuke", 15.0, "'Nuf said!")
+        shield: new Item('Shield', 0.3, 'Awesome shield!'),
+        ADCAP: new Item('ADCAP', 1.5, 'Better torpedo!'),
+        nuke: new Item('Nuke', 15.0, '\'Nuf said!')
     }
 
-    var targt = new Target("Target", 100);
+    var targt = new Target("USS Target", 100);
 
     var attackMsg = 'No Attack Messages Yet';
     var statusMsg = 'No Status Messages Yet';
@@ -136,6 +136,10 @@ function GameService() {
         if(statusMsg == 'No Status Messages Yet'){
             statusMsg = 'Using: ';  
         }
+
+        if(targt.items.length > 2){
+            alert('You already have the Maximum number of Mods - CHEATER!');
+        }
         
         if (targt.items.length < 3) {
             if(targt.items.length !=0){
@@ -151,6 +155,10 @@ function GameService() {
         targt.health = 100;
         targt.hits = 0;
         targt.items.length = 0;
+
+        attackMsg = 'No Attack Messages Yet';
+        statusMsg = 'No Status Messages Yet';
+        attackSummary = 'not available yet';
     }
 
     function healthCheckReset() {
